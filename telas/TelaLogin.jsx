@@ -1,8 +1,12 @@
+import React, { useState } from 'react';
 import { View, Text, Button } from 'react-native';
 
 import InputPersonalizado from '../components/InputPersonalizado';
 
 function TelaLogin({ navigation }) {
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+
     return (
         <View>
             <Text>Tela de Login</Text>
@@ -10,15 +14,15 @@ function TelaLogin({ navigation }) {
             <InputPersonalizado 
                 legenda="Email"
                 textoTemporario="Digite seu email"
-                valor=""
-                aoAlterarValor={() => {}}
+                valor={email}
+                aoAlterarValor={setEmail}
             />
 
             <InputPersonalizado 
                 legenda="Senha"
                 textoTemporario="Digite sua senha"
-                valor=""
-                aoAlterarValor={() => {}}
+                valor={senha}
+                aoAlterarValor={setSenha}
                 ehSenha={true}
             />
 
